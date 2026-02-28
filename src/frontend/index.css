@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======================================================
+   HEY FRIEND — Design System
+   Tone: Modern messaging, vibrant teal/emerald, friendly
+   Fonts: Sora (display) + Plus Jakarta Sans (body)
+   ====================================================== */
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/Sora.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  /* ---- Light Theme (Default) ---- */
+  :root {
+    --radius: 0.75rem;
+
+    /* Core surfaces */
+    --background: 0.98 0.004 200;
+    --foreground: 0.18 0.02 235;
+
+    /* Cards / overlays */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 235;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 235;
+
+    /* Primary: Teal/Emerald */
+    --primary: 0.58 0.17 175;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: soft teal tint */
+    --secondary: 0.94 0.02 185;
+    --secondary-foreground: 0.25 0.05 185;
+
+    /* Muted */
+    --muted: 0.94 0.01 200;
+    --muted-foreground: 0.52 0.02 200;
+
+    /* Accent: bright teal */
+    --accent: 0.88 0.04 185;
+    --accent-foreground: 0.3 0.08 175;
+
+    /* Destructive */
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 1 0 0;
+
+    /* Borders / inputs */
+    --border: 0.88 0.01 200;
+    --input: 0.9 0.01 200;
+    --ring: 0.58 0.17 175;
+
+    /* Message bubbles */
+    --bubble-out: 0.58 0.17 175;
+    --bubble-out-fg: 1 0 0;
+    --bubble-in: 0.96 0.01 200;
+    --bubble-in-fg: 0.18 0.02 235;
+
+    /* Charts */
+    --chart-1: 0.58 0.17 175;
+    --chart-2: 0.68 0.15 155;
+    --chart-3: 0.72 0.12 195;
+    --chart-4: 0.65 0.18 145;
+    --chart-5: 0.55 0.2 165;
+
+    /* Sidebar */
+    --sidebar: 0.97 0.008 190;
+    --sidebar-foreground: 0.18 0.02 235;
+    --sidebar-primary: 0.58 0.17 175;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.92 0.025 185;
+    --sidebar-accent-foreground: 0.3 0.08 175;
+    --sidebar-border: 0.88 0.01 200;
+    --sidebar-ring: 0.58 0.17 175;
+  }
+
+  /* ---- Dark Theme ---- */
+  .dark {
+    --background: 0.12 0.015 230;
+    --foreground: 0.94 0.01 200;
+
+    --card: 0.16 0.018 230;
+    --card-foreground: 0.94 0.01 200;
+    --popover: 0.19 0.02 230;
+    --popover-foreground: 0.94 0.01 200;
+
+    --primary: 0.62 0.18 175;
+    --primary-foreground: 0.08 0.01 200;
+
+    --secondary: 0.22 0.025 225;
+    --secondary-foreground: 0.9 0.01 200;
+
+    --muted: 0.2 0.018 225;
+    --muted-foreground: 0.6 0.02 215;
+
+    --accent: 0.25 0.03 220;
+    --accent-foreground: 0.72 0.14 175;
+
+    --destructive: 0.62 0.22 22;
+    --destructive-foreground: 0.94 0.01 200;
+
+    --border: 0.28 0.02 225;
+    --input: 0.25 0.02 225;
+    --ring: 0.62 0.18 175;
+
+    --bubble-out: 0.58 0.18 175;
+    --bubble-out-fg: 1 0 0;
+    --bubble-in: 0.22 0.025 225;
+    --bubble-in-fg: 0.94 0.01 200;
+
+    --chart-1: 0.62 0.18 175;
+    --chart-2: 0.7 0.15 158;
+    --chart-3: 0.6 0.16 195;
+    --chart-4: 0.65 0.19 148;
+    --chart-5: 0.55 0.2 168;
+
+    --sidebar: 0.14 0.016 230;
+    --sidebar-foreground: 0.94 0.01 200;
+    --sidebar-primary: 0.62 0.18 175;
+    --sidebar-primary-foreground: 0.08 0.01 200;
+    --sidebar-accent: 0.2 0.02 225;
+    --sidebar-accent-foreground: 0.72 0.14 175;
+    --sidebar-border: 0.22 0.02 225;
+    --sidebar-ring: 0.62 0.18 175;
+  }
+
+  /* ---- Pink Theme ---- */
+  .pink {
+    --background: 0.98 0.005 0;
+    --foreground: 0.2 0.04 10;
+
+    --card: 1 0 0;
+    --card-foreground: 0.2 0.04 10;
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.04 10;
+
+    --primary: 0.62 0.22 355;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.94 0.03 355;
+    --secondary-foreground: 0.3 0.07 355;
+
+    --muted: 0.95 0.015 0;
+    --muted-foreground: 0.52 0.03 355;
+
+    --accent: 0.9 0.05 355;
+    --accent-foreground: 0.35 0.1 355;
+
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.88 0.02 355;
+    --input: 0.9 0.02 355;
+    --ring: 0.62 0.22 355;
+
+    --bubble-out: 0.62 0.22 355;
+    --bubble-out-fg: 1 0 0;
+    --bubble-in: 0.94 0.03 355;
+    --bubble-in-fg: 0.2 0.04 10;
+
+    --chart-1: 0.62 0.22 355;
+    --chart-2: 0.7 0.18 340;
+    --chart-3: 0.68 0.2 15;
+    --chart-4: 0.65 0.22 330;
+    --chart-5: 0.55 0.23 5;
+
+    --sidebar: 0.97 0.008 355;
+    --sidebar-foreground: 0.2 0.04 10;
+    --sidebar-primary: 0.62 0.22 355;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.035 355;
+    --sidebar-accent-foreground: 0.35 0.1 355;
+    --sidebar-border: 0.88 0.02 355;
+    --sidebar-ring: 0.62 0.22 355;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ======================================================
+   Custom Utilities
+   ====================================================== */
+
+@layer utilities {
+  .font-display {
+    font-family: "Sora", system-ui, sans-serif;
+  }
+
+  .bubble-out {
+    background: oklch(var(--bubble-out));
+    color: oklch(var(--bubble-out-fg));
+  }
+
+  .bubble-in {
+    background: oklch(var(--bubble-in));
+    color: oklch(var(--bubble-in-fg));
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* RTL support for Arabic */
+  [dir="rtl"] .message-bubble-out {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 1rem;
+  }
+  [dir="rtl"] .message-bubble-in {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .message-bubble-out {
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .message-bubble-in {
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  /* Gradient mesh background for auth screen */
+  .mesh-gradient {
+    background: 
+      radial-gradient(ellipse at 20% 50%, oklch(0.62 0.18 175 / 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.58 0.17 195 / 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 60% 80%, oklch(0.65 0.15 155 / 0.1) 0%, transparent 50%),
+      oklch(var(--background));
+  }
+
+  .pink .mesh-gradient {
+    background:
+      radial-gradient(ellipse at 20% 50%, oklch(0.7 0.2 355 / 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.65 0.22 340 / 0.1) 0%, transparent 55%),
+      radial-gradient(ellipse at 60% 80%, oklch(0.72 0.18 15 / 0.08) 0%, transparent 50%),
+      oklch(var(--background));
+  }
+
+  .dark .mesh-gradient {
+    background:
+      radial-gradient(ellipse at 20% 50%, oklch(0.58 0.18 175 / 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, oklch(0.55 0.16 195 / 0.06) 0%, transparent 55%),
+      oklch(var(--background));
+  }
+}
